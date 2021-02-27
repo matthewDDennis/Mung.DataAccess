@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{5093157C-DF7C-4FBD-BF2D-AF7F8B32D62B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{22B230F4-156C-4B40-8309-1746DEEC5C66}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{E3CB245A-9AF0-4D24-8B30-2B5E69320C28}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Munq.DataAccess.Client", "Src\Munq.DataAccess.Client\Munq.DataAccess.Client.csproj", "{7966CF2D-E3B6-4B41-A1C1-7905F4D676D7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Munq.DataAccess.EntityFrameworkCore", "Src\Munq.DataAccess.EntityFrameworkCore\Munq.DataAccess.EntityFrameworkCore.csproj", "{79BD4579-CF01-4D4D-ABA4-8D6D7070172C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Munq.DataAccess.Server", "Src\Munq.DataAccess.Server\Munq.DataAccess.Server.csproj", "{A994C52C-54ED-4A42-8787-2CD248359B2A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Munq.DataAccess.Shared", "Src\Munq.DataAccess.Shared\Munq.DataAccess.Shared.csproj", "{9DD613FA-46AF-400A-844C-867873EF9034}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7966CF2D-E3B6-4B41-A1C1-7905F4D676D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7966CF2D-E3B6-4B41-A1C1-7905F4D676D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7966CF2D-E3B6-4B41-A1C1-7905F4D676D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7966CF2D-E3B6-4B41-A1C1-7905F4D676D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79BD4579-CF01-4D4D-ABA4-8D6D7070172C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79BD4579-CF01-4D4D-ABA4-8D6D7070172C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79BD4579-CF01-4D4D-ABA4-8D6D7070172C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79BD4579-CF01-4D4D-ABA4-8D6D7070172C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A994C52C-54ED-4A42-8787-2CD248359B2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A994C52C-54ED-4A42-8787-2CD248359B2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A994C52C-54ED-4A42-8787-2CD248359B2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A994C52C-54ED-4A42-8787-2CD248359B2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DD613FA-46AF-400A-844C-867873EF9034}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DD613FA-46AF-400A-844C-867873EF9034}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DD613FA-46AF-400A-844C-867873EF9034}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DD613FA-46AF-400A-844C-867873EF9034}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7966CF2D-E3B6-4B41-A1C1-7905F4D676D7} = {5093157C-DF7C-4FBD-BF2D-AF7F8B32D62B}
+		{79BD4579-CF01-4D4D-ABA4-8D6D7070172C} = {5093157C-DF7C-4FBD-BF2D-AF7F8B32D62B}
+		{A994C52C-54ED-4A42-8787-2CD248359B2A} = {5093157C-DF7C-4FBD-BF2D-AF7F8B32D62B}
+		{9DD613FA-46AF-400A-844C-867873EF9034} = {5093157C-DF7C-4FBD-BF2D-AF7F8B32D62B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A02BD2B8-5B61-4BA9-9B1F-4D2624E11404}
+	EndGlobalSection
+EndGlobal
