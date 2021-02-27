@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Munq.DataAccess.Server", "S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Munq.DataAccess.Shared", "Src\Munq.DataAccess.Shared\Munq.DataAccess.Shared.csproj", "{9DD613FA-46AF-400A-844C-867873EF9034}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BlazerBlog", "BlazerBlog", "{DEDA2779-0924-4F6F-B626-FF6FA81D0A9F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BlazerBlog Protoyping", "BlazerBlog Protoyping", "{DEDA2779-0924-4F6F-B626-FF6FA81D0A9F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazerBlog.Server", "Samples\BlazerBlog\Server\BlazerBlog.Server.csproj", "{A69B207F-896F-418E-A1C2-80F5C08D7600}"
 EndProject

@@ -1,0 +1,30 @@
+﻿@page "/TagList"
+@inject TagService TagService
+
+<h3>Tag List</h3>
+
+@if (Tags is Object)
+{
+    foreach (var tag in Tags)
+    {
+        <div>@tag.Name</div>
+    }
+}
+else
+{
+    <p>Loading ...</p>
+}
+
+
+@code {
+    public IEnumerable<Tag> Tags = null;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await TagService.SeedData();
+
+        Tags = await TagService.GetAll();
+    }
+
+
+}

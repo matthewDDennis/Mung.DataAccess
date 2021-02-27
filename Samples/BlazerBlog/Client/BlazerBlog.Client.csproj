@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Src\Munq.DataAccess.Shared\Munq.DataAccess.Shared.csproj" />
     <ProjectReference Include="..\Shared\BlazerBlog.Shared.csproj" />
   </ItemGroup>
 
