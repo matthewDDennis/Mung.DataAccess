@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Description>Simple DataAccess for .NET Client Applications</Description>
+    <Authors>Matthew Dennis</Authors>
   </PropertyGroup>
 
   <ItemGroup>
