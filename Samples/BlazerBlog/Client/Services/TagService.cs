@@ -25,5 +25,10 @@ namespace BlazerBlog.Client.Services
             await Insert(new Tag { Id = 4, Name = "Tutorial",    Description = "Tutorials" });
 
         }
+
+        public override Task<IEnumerable<Tag>> GetAll(int? skip = null, int? take = null)
+        {
+            return base.Get(orderBy: (query) => query.OrderBy(tag => tag.Name));
+        }
     }
 }
