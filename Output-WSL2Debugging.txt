@@ -1,0 +1,15 @@
+﻿Unexpected Exception parsing '/etc/wsl.conf'.
+System.FormatException: Unrecognized line format: 'ave this into /etc/wsl.conf'.
+   at Microsoft.Extensions.Configuration.Ini.IniStreamConfigurationProvider.Read(Stream stream)
+   at Microsoft.Extensions.Configuration.Ini.IniConfigurationProvider.Load(Stream stream)
+   at Microsoft.VisualStudio.WslDebugging.Core.Checkers.WslConfChecker.<CheckCoreAsync>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.VisualStudio.Telemetry.WindowsErrorReporting.WatsonReport.GetClrWatsonExceptionInfo(Exception exceptionObject)
+Using default values for automount:enabled and automount:root.
+Checking WSL 2 configuration: Success
+Checking .NET installation: Success
+Checking HTTPs configuration: Success
+Checking User Secrets configuration: Success
+Checking Visual Studio debugger installation: Failure
+Updating the Visual Studio debugger in the default WSL 2 distribution failed.
+Updating the Visual Studio debugger in the default WSL 2 distribution failed.
