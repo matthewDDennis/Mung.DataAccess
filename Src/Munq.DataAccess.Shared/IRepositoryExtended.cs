@@ -25,7 +25,7 @@ namespace Munq.DataAccess.Shared
     /// <typeparam name="TKey">The type of the key property in TEntity.</typeparam>
     public interface IRepositoryExtended<TEntity, TKey> :IRepository<TEntity, TKey> 
         where TEntity : class
-        where TKey    : struct, IEquatable<TKey>
+        where TKey    : IEquatable<TKey>
     {
         /// <summary>
         /// Asynchronously gets a <see cref="IEnumerable{TEntity}"/> from the entity store using a customized query.

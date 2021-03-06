@@ -1,0 +1,29 @@
+﻿@page "/BlogList"
+
+@inject BlogService BlogService
+
+<h3>Blogs</h3>
+
+@if (Blogs is Object)
+{
+    foreach (var blog in Blogs)
+    {
+        <div><img src="@blog.ImageUrl"style="width:100%;"/></div>
+        <h2>@blog.Title</h2>
+        <div>@blog.Abstract</div>
+    }
+}
+else
+{
+    <p>Loading ...</p>
+}
+
+
+@code {
+    public IEnumerable<Blog> Blogs = null;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Blogs = await BlogService.GetAll();
+    }
+}

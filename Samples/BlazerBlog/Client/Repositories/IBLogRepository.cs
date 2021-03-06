@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BlazerBlog.Client.Repositories
 {
-    public interface ITagRepository : IRepositoryExtended<Tag, string>
+    public interface IBlogRepository :IRepositoryExtended<Blog, int>
     {
     }
 }

@@ -19,7 +19,7 @@ namespace Munq.DataAccess.Shared
     public abstract class Manager<TRepository, TEntity, TKey> : IRepository<TEntity, TKey>
         where TRepository : IRepository<TEntity, TKey>
         where TEntity     : class
-        where TKey        : struct, IEquatable<TKey>
+        where TKey        : IEquatable<TKey>
 
     {
         private readonly IRepository<TEntity, TKey> _repository;

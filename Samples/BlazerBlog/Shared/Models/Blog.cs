@@ -16,19 +16,19 @@ namespace BlazerBlog.Shared.Models
         public int Id { get; set; }
 
         /// <summary>
-        /// Gets or sets the name of the Author of the post.
+        /// Gets or sets the name of the Author of the blog.
         /// </summary>
         [Required]
         public string Author { get; set; }
 
         /// <summary>
-        /// Gets or set the title of the post.
+        /// Gets or set the title of the blog.
         /// </summary>
         [Required]
         public string Title { get; set; }
 
         /// <summary>
-        /// Gets or sets a brief description of the post.
+        /// Gets or sets a brief description of the blog.
         /// </summary>
         [Required]
         public string Abstract { get; set; }
@@ -42,6 +42,6 @@ namespace BlazerBlog.Shared.Models
         /// <summary>
         /// Gets or sets the list of Posts associated with the post.
         /// </summary>
-        public IEnumerable<Post> Posts { get; set; } = new List<Post>();
+        public List<Post> Posts { get; set; } = new List<Post>();
     }
 }

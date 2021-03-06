@@ -19,11 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Munq.DataAccess.Shared", "S
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BlazerBlog Protoyping", "BlazerBlog Protoyping", "{DEDA2779-0924-4F6F-B626-FF6FA81D0A9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazerBlog.Server", "Samples\BlazerBlog\Server\BlazerBlog.Server.csproj", "{A69B207F-896F-418E-A1C2-80F5C08D7600}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazerBlog.Server", "Samples\BlazerBlog\Server\BlazerBlog.Server.csproj", "{A69B207F-896F-418E-A1C2-80F5C08D7600}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazerBlog.Client", "Samples\BlazerBlog\Client\BlazerBlog.Client.csproj", "{49B79BE4-8768-46F1-8D7B-8AC58D6823E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazerBlog.Client", "Samples\BlazerBlog\Client\BlazerBlog.Client.csproj", "{49B79BE4-8768-46F1-8D7B-8AC58D6823E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazerBlog.Shared", "Samples\BlazerBlog\Shared\BlazerBlog.Shared.csproj", "{374F10BF-1C70-45B5-A9A0-71BF8FE48D30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazerBlog.Shared", "Samples\BlazerBlog\Shared\BlazerBlog.Shared.csproj", "{374F10BF-1C70-45B5-A9A0-71BF8FE48D30}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

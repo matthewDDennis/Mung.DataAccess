@@ -17,7 +17,7 @@ namespace Munq.DataAccess.Shared
     /// <remarks>The Key property should be annotated with the <see cref="KeyAttribute"/>.</remarks>
 	/// <typeparam name="TEntity">The type of entity managed by the repository.</typeparam>
     /// <typeparam name="TKey">The type of the Key.</typeparam>
-    public interface IKeyAccessor<TEntity, TKey> where TKey : struct, IEquatable<TKey>
+    public interface IKeyAccessor<TEntity, TKey> where TKey : IEquatable<TKey>
     {
         /// <summary>
         /// Gets the value of the key property of the Entity.
@@ -48,7 +48,7 @@ namespace Munq.DataAccess.Shared
     /// <typeparam name="TKey">The type of the Key.</typeparam>
     public abstract class KeyAccessorBase<TEntity, TKey> : IKeyAccessor<TEntity, TKey>
        where TEntity : class
-       where TKey    : struct, IEquatable<TKey>
+       where TKey    : IEquatable<TKey>
     {
         private static Func<TEntity, TKey>       _getKeyFunc = null;
         private static Func<TEntity, TKey, TKey> _setKeyFunc = null;
@@ -293,6 +293,26 @@ namespace Munq.DataAccess.Shared
     }
 
     /// <summary>
+    /// Defines the implementation for an String Key Accessor
+    /// </summary>
+    /// <typeparam name="TEntity">The type of entity managed by the repository.</typeparam>
+    public class StringKeyAccessor<TEntity> : KeyAccessorBase<TEntity, string>
+        where TEntity : class
+    {
+        /// <summary>
+        /// Initializes a new instance of thee <see cref="StringKeyAccessor{TEntity}"/> class.
+        /// </summary>
+        public StringKeyAccessor()
+        {
+        }
+
+        /// <inheritdoc/>
+        public override string NextKey() => 
+            throw new NullReferenceException("A key of type string can not be null");
+    }
+
+
+    /// <summary>
     /// A Factory for creating the KeyAccessors.
     /// </summary>
     public static class KeyAccessorFactory
@@ -305,22 +325,29 @@ namespace Munq.DataAccess.Shared
         /// <returns></returns>
         public static IKeyAccessor<TEntity, TKey> Create<TEntity, TKey>()
             where TEntity : class
-            where TKey    : struct, IEquatable<TKey>
+            where TKey    : IEquatable<TKey>
         {
-            TKey key = default;
-            object accessor = key switch
+            object accessor;
+
+            if (typeof(TKey) == typeof(string))
+                accessor = new StringKeyAccessor<TEntity>();
+            else
             {
-                int    => new IntKeyAccessor<TEntity>(),
-                uint   => new UIntKeyAccessor<TEntity>(),
-                long   => new LongKeyAccessor<TEntity>(),
-                ulong  => new ULongKeyAccessor<TEntity>(),
-                short  => new ShortKeyAccessor<TEntity>(),
-                ushort => new UShortKeyAccessor<TEntity>(),
-                byte   => new ByteKeyAccessor<TEntity>(),
-                sbyte  => new SByteKeyAccessor<TEntity>(),
-                Guid   => new GuidKeyAccessor<TEntity>(),
-                _      => throw new Exception($"{typeof(TKey).Name} is not supported.")
-            };
+                TKey key = default;
+                accessor = key switch
+                {
+                    int    => new IntKeyAccessor<TEntity>(),
+                    uint   => new UIntKeyAccessor<TEntity>(),
+                    long   => new LongKeyAccessor<TEntity>(),
+                    ulong  => new ULongKeyAccessor<TEntity>(),
+                    short  => new ShortKeyAccessor<TEntity>(),
+                    ushort => new UShortKeyAccessor<TEntity>(),
+                    byte   => new ByteKeyAccessor<TEntity>(),
+                    sbyte  => new SByteKeyAccessor<TEntity>(),
+                    Guid   => new GuidKeyAccessor<TEntity>(),
+                    _      => throw new Exception($"{typeof(TKey).Name} is not supported.")
+                };
+            }
 
             if (accessor is KeyAccessorBase<TEntity, TKey> typedAccessor)
             {

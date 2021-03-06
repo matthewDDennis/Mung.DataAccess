@@ -21,7 +21,7 @@ namespace Munq.DataAccess.Shared
     /// <typeparam name="TKey">The type of the key property in TEntity.</typeparam>
     public interface IRepository<TEntity, TKey> 
         where TEntity : class
-        where TKey    : struct, IEquatable<TKey>
+        where TKey    : IEquatable<TKey>
     {
         /// <summary>
         /// Gets 'All' the entities from the entity store, with optional paging.

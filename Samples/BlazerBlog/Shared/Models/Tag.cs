@@ -14,14 +14,9 @@ namespace BlazerBlog.Shared.Models
     public class Tag
     {
         /// <summary>
-        /// Gets or sets the Id of the Tag.
-        /// </summary>
-        [Key]
-        public int Id { get; set; }
-
-        /// <summary>
         /// Gets or sets the Name of the Tag.
         /// </summary>
+        [Key]
         [Required]
         [StringLength(maximumLength: 16, ErrorMessage = "Tag Names must be 16 characters or less")]
         public string Name { get; set; }

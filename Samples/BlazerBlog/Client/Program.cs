@@ -25,6 +25,8 @@ namespace BlazerBlog.Client
                 .AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) })
                 .AddScoped<ITagRepository, TagMemoryRepository>()
                 .AddScoped<TagService>()
+                .AddScoped<IBlogRepository, BlogMemoryRepository>()
+                .AddScoped<BlogService>()
                 
                 ;
 

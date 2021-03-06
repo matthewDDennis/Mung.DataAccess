@@ -59,7 +59,7 @@ namespace BlazerBlog.Shared.Models
         /// <summary>
         /// Gets or sets the list of tags associated with the blog post.
         /// </summary>
-        public IEnumerable<Tag> Tags { get; set; } = new List<Tag>();
+        public List<string> Tags { get; set; } = new List<string>();
 
     }
 }

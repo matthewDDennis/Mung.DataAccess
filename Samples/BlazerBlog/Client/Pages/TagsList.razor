@@ -21,8 +21,6 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        await TagService.SeedData();
-
         Tags = await TagService.GetAll();
     }
 
