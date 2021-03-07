@@ -28,6 +28,11 @@ namespace BlazerBlog.Shared.Models
         public string Title { get; set; }
 
         /// <summary>
+        /// Gets or sets the slug used to form the url for the blog.
+        /// </summary>
+        public string Slug { get; set; }
+
+        /// <summary>
         /// Gets or sets a brief description of the blog.
         /// </summary>
         [Required]

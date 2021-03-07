@@ -1,0 +1,68 @@
+﻿@page "/Blog/{Slug}"
+@page "/Blog/{Slug}/{id:int}"
+
+@inject BlogService BlogService
+@inject NavigationManager NavManager
+
+@if(blog is object)
+{
+    <div><img src="@blog.ImageUrl" style="width:100%;"/></div>
+    <h2>@blog.Title</h2>
+    <div>@((MarkupString)blog.Abstract)</div>
+    <hr/>
+
+    @if (post is object)
+    {
+        <div>
+            <div><img src="@post.ImageUrl" />"</div>
+            <h3>@post.Title</h3>
+            <div>@post.DatePosted @post.Author</div>
+            <div>@((MarkupString)post.Content)</div>
+        </div>
+    }
+    else
+    {
+        foreach (var blogPost in blog.Posts)
+        {
+            string url = $"blog/{blog.Slug}/{blogPost.Id}";
+            <div @onclick="@(() => NavManager.NavigateTo(url))">
+                <div><img src="@blogPost.ImageUrl" /></div>
+                <h3>@blogPost.Title</h3>
+                <div>@blogPost.DatePosted @blogPost.Author</div>
+                <div>@((MarkupString)@blogPost.Abstract)</div>
+            </div>
+        }
+    }
+}
+else
+{
+    <p>Loading ...</p>
+}
+
+@code {
+    [Parameter]
+    public string Slug { get; set; }
+
+    [Parameter]
+    public int? id { get; set; }
+
+    private Blog blog;
+    private Post post;
+
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (Slug is object)
+        {
+            blog = await BlogService.GetBlogBySlug(Slug);
+            post = null;
+
+            if (blog is object && id.HasValue)
+            {
+                post = blog.Posts.FirstOrDefault(p => p.Id == id.Value);
+            }
+
+        }
+    }
+
+}

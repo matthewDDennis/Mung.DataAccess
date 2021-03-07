@@ -22,5 +22,12 @@ namespace BlazerBlog.Client.Services
             return base.Get(orderBy: (query) => query.OrderBy(blog => blog.Title),
                             skip: skip, take: take);
         }
+
+        public async Task<Blog> GetBlogBySlug(string slug)
+        {
+            slug = slug.ToLower();
+            var blogs = await base.Get(filter: (b) => b.Slug.ToLower() == slug);
+            return blogs.FirstOrDefault();
+        }
     }
 }
