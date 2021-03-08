@@ -6,9 +6,12 @@
 
 @if(blog is object)
 {
-    <div><img src="@blog.ImageUrl" style="width:100%;"/></div>
-    <h2>@blog.Title</h2>
-    <div>@((MarkupString)blog.Abstract)</div>
+    <div @onclick="@(() => NavManager.NavigateTo($"blog/{blog.Slug}"))">
+        <div>
+        <img src="@blog.ImageUrl" style="width:100%;"/></div>
+        <h2>@blog.Title</h2>
+        <div>@((MarkupString)blog.Abstract)</div>
+    </div>
     <hr/>
 
     @if (post is object)
@@ -24,8 +27,7 @@
     {
         foreach (var blogPost in blog.Posts)
         {
-            string url = $"blog/{blog.Slug}/{blogPost.Id}";
-            <div @onclick="@(() => NavManager.NavigateTo(url))">
+            <div @onclick="@(() => NavManager.NavigateTo($"blog/{blog.Slug}/{blogPost.Id}"))">
                 <div><img src="@blogPost.ImageUrl" /></div>
                 <h3>@blogPost.Title</h3>
                 <div>@blogPost.DatePosted @blogPost.Author</div>

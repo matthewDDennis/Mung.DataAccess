@@ -1,6 +1,7 @@
 ﻿@page "/Blogs"
 
 @inject BlogService BlogService
+@inject NavigationManager NavManager
 
 <h3>Blogs</h3>
 
@@ -8,9 +9,11 @@
 {
     foreach (var blog in Blogs)
     {
-        <div><img src="@blog.ImageUrl"style="width:100%;"/></div>
-        <h2>@blog.Title</h2>
-        <div>@blog.Abstract</div>
+        <div @onclick="@(() => NavManager.NavigateTo($"blog/{blog.Slug}"))">
+            <div><img src="@blog.ImageUrl"style="width:100%;"/></div>
+            <h2>@blog.Title</h2>
+            <div>@blog.Abstract</div>
+        </div>
     }
 }
 else
