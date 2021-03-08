@@ -88,13 +88,23 @@ charcoal edison bulb cliche kickstarter mlkshk austin.</p>";
 
         public override Task<Blog> Insert(Blog entity)
         {
+            SetNewPostIds(entity);
+            return base.Insert(entity);
+        }
+
+        public override Task<Blog> Update(Blog entityToUpdate)
+        {
+            SetNewPostIds(entityToUpdate);
+            return base.Update(entityToUpdate);
+        }
+
+        private static void SetNewPostIds(Blog entity)
+        {
             foreach (var post in entity.Posts)
             {
                 if (post.Id == default)
                     post.Id = _postKeyAccessor.NextKey();
             }
-
-            return base.Insert(entity);
         }
     }
 }
